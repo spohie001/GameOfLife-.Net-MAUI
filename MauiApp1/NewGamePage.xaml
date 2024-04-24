@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.NewGamePage"
+             BackgroundImageSource="landscape.jpg">
+    <Grid RowDefinitions="100, Auto, Auto"
+          ColumnDefinitions=".75*, .25*"
+          Padding="10"
+          RowSpacing="10"
+          ColumnSpacing="10">
+
+        <Label
+            Grid.ColumnSpan="2"
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Center"
+        Text="New game" 
+        Style="{StaticResource title}">
+
+        </Label>
+        <!--
+        <Entry
+                Grid.Row="1"
+                Placeholder="Enter name"
+                TextColor="Black">
+            <Entry.Triggers>
+                <Trigger TargetType="Entry"
+                 Property="IsFocused"
+                 Value="True">
+                    <Setter Property="BackgroundColor" Value="ForestGreen" />
+                    <Setter Property="TextColor" Value="White"/>
+                </Trigger>
+            </Entry.Triggers>
+        </Entry>
+-->
+        <Picker x:Name="picker"
+                Grid.Row="2"
+                BackgroundColor="White"
+                TextColor="Black"
+                TitleColor="Black"
+        Title="Select size of the board"
+                >
+            <Picker.Items>
+                <x:String>5</x:String>
+                <x:String>6</x:String>
+                <x:String>7</x:String>
+                <x:String>8</x:String>
+                <x:String>9</x:String>
+                <x:String>10</x:String>
+                <x:String>11</x:String>
+                <x:String>12</x:String>
+                <x:String>13</x:String>
+            </Picker.Items>
+        </Picker>
+        <Button Text="Start new game!"
+                Grid.Row="2"
+                Grid.Column="1"
+                Clicked="OnClickedNavigateToNewGamePage"/>
+    </Grid>
+</ContentPage>

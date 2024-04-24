@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MauiApp1.GamePage"
+             BackgroundImageSource="landscape.jpg">
+    <Grid
+            x:Name="buttonGrid"
+            RowDefinitions=".50*,.10*,.10*,.10*,.10*,.10*"
+            ColumnDefinitions=".60*,.40*"
+            Margin="10"
+            Padding="10"
+        >
+        <Rectangle
+            
+            x:Name="buttonBackground"
+            Grid.ColumnSpan="2"
+            BackgroundColor="White"
+            Opacity="0.5"
+            />
+        <Rectangle
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            BackgroundColor="White"
+            Opacity="0.5"
+            />
+        <Label 
+            x:Name="Statistics"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            BackgroundColor="Transparent"
+            TextColor="Black"
+            />
+        <Picker x:Name="modePicker"
+            Grid.Row="2"
+            HeightRequest="75"
+            BackgroundColor="White"
+            TextColor="Black"
+            TitleColor="Black"
+            Title="Select game mode"
+            >
+            <Picker.Behaviors>
+                <toolkit:EventToCommandBehavior
+                        EventName="SelectedIndexChanged"
+                        Command="{Binding ChangeMode}" />
+            </Picker.Behaviors>
+            <Picker.Items>
+                <x:String>AUTOMATIC</x:String>
+                <x:String>SINGLE</x:String>
+                <x:String>EDIT</x:String>
+            </Picker.Items>
+        </Picker>
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            Text="SET MODE"
+            Clicked="ChangeMode"
+            />
+    </Grid>
+</ContentPage>

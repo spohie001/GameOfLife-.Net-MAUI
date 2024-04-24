@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage"
+             BackgroundImageSource="landscape.jpg">
+
+    <Grid RowDefinitions="150, Auto, Auto, Auto"
+          Padding="10"
+          RowSpacing="20"
+          ColumnSpacing="10">
+
+        
+        <Label
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Center"
+        x:Name="titleMain"
+        Text="Game of life" 
+        Style="{StaticResource title}">
+        </Label>
+        
+        <Button Text="new game"
+                Grid.Row="1"
+                Clicked="OnClickedNavigateToNewGamePage"/>
+
+        <Button Text="saved game"
+                Grid.Row="2"
+                Clicked="OnClickSavedGame"/>
+        
+
+    </Grid>
+</ContentPage>
